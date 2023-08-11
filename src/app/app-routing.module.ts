@@ -13,15 +13,23 @@ const routes: Routes = [
   },
   {
     path: 'personajes',
-    loadChildren: () => import('./personajes/personajes.module').then( m => m.PERSONAJESPageModule)
+    loadChildren: () => import('./pages/personajes/personajes.module').then( m => m.PERSONAJESPageModule)
   },
   {
     path: 'categoria',
-    loadChildren: () => import('./categoria/categoria.module').then( m => m.CATEGORIAPageModule)
+    loadChildren: () => import('./pages/categoria/categoria.module').then( m => m.CATEGORIAPageModule)
   },
   {
     path: 'cargando',
-    loadChildren: () => import('./cargando/cargando.module').then( m => m.CARGANDOPageModule)
+    loadChildren: () => import('./pages/cargando/cargando.module').then( m => m.CARGANDOPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   }
 ];
 
