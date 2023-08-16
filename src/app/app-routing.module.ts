@@ -30,6 +30,26 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'habilidades',
+    loadChildren: () => import('./pages/habilidades/habilidades.module').then( m => m.HabilidadesPageModule)
+  },
+  {
+    path: 'estadisticas',
+    loadChildren: () => import('./pages/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+  },
+  {
+    path: 'equipo',
+    loadChildren: () => import('./pages/equipo/equipo.module').then( m => m.EquipoPageModule)
+  },
+  {
+    path: 'rango',
+    loadChildren: () => import('./pages/rango/rango.module').then( m => m.RangoPageModule)
   }
 ];
 
