@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PersonajesService } from 'src/app/services/personajes.service';
+import { personaje } from './personajes.model';
 
 @Component({
   selector: 'app-personajes',
@@ -8,9 +10,17 @@ import { Router } from '@angular/router';
 })
 export class PERSONAJESPage implements OnInit {
 
-  constructor(private router: Router) { }
+  Personaje! : personaje;
+
+  constructor(private PersonajeService: PersonajesService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(param => {
+      const aux = param.get('id')
+      if (aux) {
+        this.Personaje = this.PersonajeService.getPersonaje(aux)
+      }
+    })
   }
 
 }

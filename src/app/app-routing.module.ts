@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ChildrenOutletContexts, PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -13,7 +13,16 @@ const routes: Routes = [
   },
   {
     path: 'personajes',
-    loadChildren: () => import('./pages/personajes/personajes.module').then( m => m.PERSONAJESPageModule)
+    children: [
+        {
+          path: "",
+          loadChildren: () => import('./pages/personajes/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+        },
+        {
+          path: ':id',
+          loadChildren: () => import('./pages/personajes/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+        },
+    ]
   },
   {
     path: 'categoria',
@@ -41,7 +50,7 @@ const routes: Routes = [
   },
   {
     path: 'estadisticas',
-    loadChildren: () => import('./pages/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+    loadChildren: () => import('./pages/personajes/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
   },
   {
     path: 'equipo',

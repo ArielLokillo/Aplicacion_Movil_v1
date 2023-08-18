@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { personaje } from '../pages/personajes/personajes.model';
+import { PersonajesService } from '../services/personajes.service';
 
 @Component({
   selector: 'app-personajes',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PERSONAJESPage implements OnInit {
 
-  constructor() { }
+  listaPersonajes: personaje [] = [];
+
+  constructor(private PersonajesService: PersonajesService) { }
 
   ngOnInit() {
+    this.listaPersonajes = this.PersonajesService.getAll()
   }
 
 }
