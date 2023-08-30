@@ -3,21 +3,10 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>home</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://www.duoc.cl/wp-content/uploads/2020/06/Puente-alto.jpg" />
-    <ion-card-header>
-      <ion-card-title>Bienvenido!</ion-card-title>
-      <ion-card-subtitle>¿desea generar el código QR?</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      
-    </ion-card-content>
-    <ion-button [routerLink]="['/personajes']" fill="outline" color="warning" shape="round">Ver más... </ion-button>
-  </ion-card>
+<app-card [mostrarBoton]="true" titulo="Bienvenido!" fecha="2023" > </app-card>
 </ion-content>
