@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PersonajesService } from 'src/app/services/personajes.service';
-import { personaje } from './personajes.model';
+import { Router } from '@angular/router';
+import { personaje } from '../pages/personajes/personajes.model';
+import { PersonajesService } from '../../services/personajes.service';
 
 @Component({
   selector: 'app-personajes',
@@ -10,17 +10,11 @@ import { personaje } from './personajes.model';
 })
 export class PERSONAJESPage implements OnInit {
 
-  Personaje! : personaje;
+  listaPersonajes: personaje [] = [];
 
-  constructor(private PersonajeService: PersonajesService, private activatedRoute: ActivatedRoute) { }
+  constructor(private PersonajesService: PersonajesService) { }
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(param => {
-      const aux = param.get('id')
-      if (aux) {
-        this.Personaje = this.PersonajeService.getPersonaje(aux)
-      }
-    })
+    this.listaPersonajes = this.PersonajesService.getAll()
   }
-
 }

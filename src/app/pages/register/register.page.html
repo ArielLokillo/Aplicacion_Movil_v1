@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Registrarse</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-input type="email" errorText="correo invalido"
+    ngModel
+    email label="usuario" labelPlacement="floating" placeholder="Ej: duoc@duoc.cl"></ion-input>
+
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" label="contraseña" labelPlacement="floating" placeholder="Ej: 1234"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" fill="outline" color="warning" (click)="volver_login()">Ingresar</ion-button>
 </ion-content>

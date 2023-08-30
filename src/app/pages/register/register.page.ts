@@ -13,5 +13,8 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
+  volver_login(){
+    this.router.navigate(['login'])
+  }
 
 }
