@@ -9,7 +9,7 @@ const routes: Routes = [
     component: PERSONAJESPage
   },
   {
-    path: 'estadisticas',
+    path: 'personajes',
     loadChildren: () => import('./estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
   }
 ];

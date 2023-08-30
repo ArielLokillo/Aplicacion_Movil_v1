@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { personaje } from '../pages/personajes/personajes.model';
 import { PersonajesService } from '../../services/personajes.service';
+import { Personaje } from './personajes.models';
 
 @Component({
   selector: 'app-personajes',
@@ -10,11 +10,11 @@ import { PersonajesService } from '../../services/personajes.service';
 })
 export class PERSONAJESPage implements OnInit {
 
-  listaPersonajes: personaje [] = [];
+  listaPersonajes: Personaje [] = [];
 
-  constructor(private PersonajesService: PersonajesService) { }
+  constructor(private personajesService: PersonajesService) { }
 
   ngOnInit() {
-    this.listaPersonajes = this.PersonajesService.getAll()
+    this.listaPersonajes = this.personajesService.getAll()
   }
 }

@@ -1,44 +1,46 @@
 import { Injectable } from '@angular/core';
-import { personaje } from '@angular/core';
+import { Personaje } from '../pages/personajes/personajes.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonajesService {
 
-  personaje: PersonajesService[] = [
+  personajes: Personaje[] = [
     {
-    id: '1',
-    nombre: 'Canserbero',
-    imagen: 'https://resizer.glanacion.com/resizer/rI0GT1hTws9mq9TBQJGPS_YKdc8=/880x586/smart/filters:format(webp):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/VBNBHW5GIVBVJM4UJTKLZEZAWA.jpg"',
-    fecha: '2023',
-    descripcion: 'huh',
+      id: "1",
+      nombre: "Sebastian Henriquez",
+      imagen: "https://resizer.glanacion.com/resizer/v2/tirone-jose-gonzalez-alias-canserbero-un-rapero-VBNBHW5GIVBVJM4UJTKLZEZAWA.jpg?auth=cbb10a3ed5cd011c9ad9dcd8d15548acc729834364d1fd89ee1cf03add343ce1&width=768&quality=70&smart=false",
+      fecha: "2023",
+      descripcion: "AAAAAAAAAAA",
     },
     {
-    id: '2',
-    nombre: 'Loco rene',
-    imagen: '',
-    fecha: '2023',
-    descripcion: 'huh',
+      id: "2",
+      nombre: "Ariel Saavedra",
+      imagen: "https://cdn-3.expansion.mx/dims4/default/1308750/2147483647/strip/true/crop/1125x591+0+0/resize/1200x630!/format/jpg/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F01%2Fd9%2F38db964e40a5bf4167c85f487a96%2Felwbeczvoaissv9.jpg",
+      fecha: "2023",
+      descripcion: "BBBBBBBBBB",
     },
     {
-    id: '3',
-    nombre: '',
-    imagen: '',
-    fecha: '2023',
-    descripcion: 'huh',
-    }
+      id: "3",
+      nombre: "Nolosexd",
+      imagen: "https://previews.123rf.com/images/frender/frender1609/frender160900265/62342154-signo-de-interrogaci%C3%B3n-y-el-hombre-3d-aislado-en-el-fondo-blanco.jpg",
+      fecha: "2023",
+      descripcion: "CCCCCCCCC",
+    },
   ]
   constructor() { }
 
-  // METODOS CUSTOM
+  //METODOS CUSTOM
+  // METODO QUE DEVUELVE OBJETO COMPLETO
   getAll() {
-    return [...this.personaje]
+    return [...this.personajes]
   }
-  // METODO QUE DEVUELVE UN JUGADOR POR EL ID BUSCADO 
-  getPersonaje(id: string) {  
+
+  //METODO QUE DEVUELVE UN JUGADOR POR EL ID BUSCADO
+  getPersonaje(id: string) {
     return {
-      ...this.personaje.find( aux => {
+      ...this.personajes.find( aux => {
         return aux.id === id
       })
     }
